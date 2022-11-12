@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/widget_repository.dart';
 import 'home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -10,11 +11,9 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final Map<Icon, String> _bottomNavigationBarItems = {
-    const Icon(Icons.home): '홈',
-    const Icon(Icons.assignment): '이용서비스',
-    const Icon(Icons.account_box): '내 정보'
-  };
+  final Map<Icon, String> _bottomNavigationBarItems =
+      WidgetRepository().bottomNavigationBarItems;
+
   final List<Widget> _screens = [];
 
   int _selectedIndex = 0;
