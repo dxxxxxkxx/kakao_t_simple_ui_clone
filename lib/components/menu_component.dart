@@ -44,7 +44,7 @@ class MenuComponent {
       List<Widget> lastRow = _menuItems.sublist(_menuItems.length - remainder);
 
       for (int i = 0; i < _cntPerRow - remainder; i++) {
-        lastRow.add(Opacity(opacity: 0.0, child: Icon(null, size: _iconSize)));
+        lastRow.add(_setMenu(iconData: null, label: null));
       }
 
       _menuRows.add(lastRow);
