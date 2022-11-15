@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import '../repositories/banner_repository.dart';
 import 'banner_list_component.dart';
 
-class Banners extends StatelessWidget {
+class BannerList extends StatelessWidget {
   final List<Widget> _banners = BannerRepository().banners;
 
-  Banners({Key? key}) : super(key: key);
+  BannerList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

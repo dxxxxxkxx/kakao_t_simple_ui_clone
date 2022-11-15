@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../repositories/notice_repository.dart';
 import 'notice_list_component.dart';
 
-class Notices extends StatelessWidget {
+class NoticeList extends StatelessWidget {
   final List<String> _notices = NoticeRepository().notices;
 
-  Notices({Key? key}) : super(key: key);
+  NoticeList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

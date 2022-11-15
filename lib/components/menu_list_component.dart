@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class MenusListComponent extends StatelessWidget {
-  final List<Widget> menusRow;
+class MenuListComponent extends StatelessWidget {
+  final List<Widget> menuRow;
 
-  const MenusListComponent({required this.menusRow, Key? key})
+  const MenuListComponent({required this.menuRow, Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: menusRow,
+      children: menuRow,
     );
   }
 }

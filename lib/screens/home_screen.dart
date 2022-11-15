@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../components/banners.dart';
-import '../components/menus.dart';
-import '../components/notices.dart';
+import '../components/banner_list.dart';
+import '../components/menu_list.dart';
+import '../components/notice_list.dart';
 
 class HomeScreen extends StatelessWidget {
-  final List<Widget> _contents = [Menus(), Banners(), Notices()];
+  final List<Widget> _contents = [MenuList(), BannerList(), NoticeList()];
 
   HomeScreen({Key? key}) : super(key: key);
 

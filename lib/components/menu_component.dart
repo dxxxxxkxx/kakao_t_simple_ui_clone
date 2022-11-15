@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MenusComponent {
+class MenuComponent {
   final Map<IconData, String> _menus = {
     Icons.local_taxi_outlined: '택시',
     Icons.local_taxi: '블랙',
@@ -15,9 +15,9 @@ class MenusComponent {
   final double _iconSize = 60.0;
 
   final List<Widget> _menuItems = [];
-  final List<List<Widget>> _menusRows = [];
+  final List<List<Widget>> _menuRows = [];
 
-  MenusComponent() {
+  MenuComponent() {
     int quotient = (_menus.length / _cntPerRow).floor();
     int remainder = _menus.length % _cntPerRow;
 
@@ -32,7 +32,7 @@ class MenusComponent {
     );
 
     for (int i = 0; i < quotient; i++) {
-      _menusRows.add(
+      _menuRows.add(
         _menuItems.sublist(
           i * quotient,
           i * quotient + _cntPerRow,
@@ -47,11 +47,11 @@ class MenusComponent {
         lastRow.add(Opacity(opacity: 0.0, child: Icon(null, size: _iconSize)));
       }
 
-      _menusRows.add(lastRow);
+      _menuRows.add(lastRow);
     }
   }
 
-  List<List<Widget>> get menusRows => _menusRows;
+  List<List<Widget>> get menusRows => _menuRows;
 
   Widget _setMenu({required IconData? iconData, required String? label}) {
     return GestureDetector(

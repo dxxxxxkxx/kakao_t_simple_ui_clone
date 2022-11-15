@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'menus_component.dart';
-import 'menus_list_component.dart';
+import 'menu_component.dart';
+import 'menu_list_component.dart';
 
-class Menus extends StatelessWidget {
-  final List<List<Widget>> _menusRows = MenusComponent().menusRows;
+class MenuList extends StatelessWidget {
+  final List<List<Widget>> _menusRows = MenuComponent().menusRows;
 
-  Menus({Key? key}) : super(key: key);
+  MenuList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class Menus extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: _menusRows.length,
       itemBuilder: (context, index) =>
-          MenusListComponent(menusRow: _menusRows[index]),
+          MenuListComponent(menuRow: _menusRows[index]),
       separatorBuilder: (BuildContext context, int index) =>
           const SizedBox(height: 24.0),
     );
