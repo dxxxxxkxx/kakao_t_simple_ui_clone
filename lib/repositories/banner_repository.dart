@@ -1,22 +1,6 @@
 import 'package:flutter/material.dart';
 
-class WidgetRepository {
-  final Map<Icon, String> _bottomNavigationBarItems = {
-    const Icon(Icons.home): '홈',
-    const Icon(Icons.assignment): '이용서비스',
-    const Icon(Icons.account_box): '내 정보'
-  };
-
-  final Map<IconData, String> _menuItems = {
-    Icons.local_taxi_outlined: '택시',
-    Icons.local_taxi: '블랙',
-    Icons.pedal_bike: '바이크',
-    Icons.drive_eta_outlined: '대리',
-    Icons.local_parking: '주차',
-    Icons.join_full: '카풀',
-    Icons.navigation: '내비'
-  };
-
+class BannerRepository {
   final List<Widget> _banners = [
     /* 1 */
     Stack(
@@ -84,19 +68,5 @@ class WidgetRepository {
     )
   ];
 
-  final List<String> _notices = [
-    '[이벤트] 추석에 KTX 공항, 터미널 이용한다면?',
-    '3.4.3 버전 업데이트 안내',
-    '3.4.2 버전 업데이트 안내',
-    '3.4.1 버전 업데이트 안내',
-    '3.4.0 버전 업데이트 안내'
-  ];
-
-  Map<Icon, String> get bottomNavigationBarItems => _bottomNavigationBarItems;
-
-  Map<IconData, String> get menuItems => _menuItems;
-
   List<Widget> get banners => _banners;
-
-  List<String> get notices => _notices;
 }

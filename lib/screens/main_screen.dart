@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../data/widget_repository.dart';
+import '../components/bottom_navigation_bar_items.dart';
+import '../components/my_app_bar.dart';
 import 'home_screen.dart';
+import 'information_screen.dart';
+import 'services_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -11,22 +14,13 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final Map<Icon, String> _bottomNavigationBarItems =
-      WidgetRepository().bottomNavigationBarItems;
-
-  final List<Widget> _screens = [];
+  final List<Widget> _screens = [
+    HomeScreen(),
+    const ServicesScreen(),
+    const InformationScreen()
+  ];
 
   int _selectedIndex = 0;
-
-  _MainScreenState() {
-    _screens.add(HomeScreen());
-    _screens.add(
-      Center(child: Text(_bottomNavigationBarItems.values.elementAt(1))),
-    );
-    _screens.add(
-      Center(child: Text(_bottomNavigationBarItems.values.elementAt(2))),
-    );
-  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -37,31 +31,12 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: const Text(
-          'Kakao T',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-      ),
+      appBar: const MyAppBar(),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        items: [
-          BottomNavigationBarItem(
-            icon: _bottomNavigationBarItems.keys.elementAt(0),
-            label: _bottomNavigationBarItems.values.elementAt(0),
-          ),
-          BottomNavigationBarItem(
-            icon: _bottomNavigationBarItems.keys.elementAt(1),
-            label: _bottomNavigationBarItems.values.elementAt(1),
-          ),
-          BottomNavigationBarItem(
-            icon: _bottomNavigationBarItems.keys.elementAt(2),
-            label: _bottomNavigationBarItems.values.elementAt(2),
-          )
-        ],
+        items: BottomNavigationBarItems().setBottomNavigationBarItems(),
       ),
     );
   }

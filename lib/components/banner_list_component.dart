@@ -12,7 +12,6 @@ class BannerListComponent extends StatelessWidget {
       onTap: () {},
       child: Container(
         width: MediaQuery.of(context).size.width,
-        margin: const EdgeInsets.symmetric(horizontal: 24.0),
         alignment: Alignment.center,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(5.0),

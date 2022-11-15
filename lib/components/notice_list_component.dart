@@ -9,6 +9,7 @@ class NoticeListComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {},
+      contentPadding: EdgeInsets.zero,
       leading: const Icon(Icons.notifications_none),
       title: Text(
         notice,
